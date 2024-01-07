@@ -58,6 +58,10 @@ extern "C" {
 #define OQS_KEM_alg_classic_mceliece_8192128 "Classic-McEliece-8192128"
 /** Algorithm identifier for Classic-McEliece-8192128f KEM. */
 #define OQS_KEM_alg_classic_mceliece_8192128f "Classic-McEliece-8192128f"
+/**Algorithm identifier for RLCE. */
+#define OQS_KEM_alg_RLCE_l1 "RLCE-L1"
+#define OQS_KEM_alg_RLCE_l3 "RLCE-L3"
+#define OQS_KEM_alg_RLCE_l5 "RLCE-L5"
 /** Algorithm identifier for HQC-128 KEM. */
 #define OQS_KEM_alg_hqc_128 "HQC-128"
 /** Algorithm identifier for HQC-192 KEM. */
@@ -88,7 +92,7 @@ extern "C" {
 // EDIT-WHEN-ADDING-KEM
 ///// OQS_COPY_FROM_UPSTREAM_FRAGMENT_ALGS_LENGTH_START
 /** Number of algorithm identifiers above. */
-#define OQS_KEM_algs_length 26
+#define OQS_KEM_algs_length 29
 ///// OQS_COPY_FROM_UPSTREAM_FRAGMENT_ALGS_LENGTH_END
 
 /**
@@ -263,6 +267,9 @@ OQS_API void OQS_KEM_free(OQS_KEM *kem);
 #ifdef OQS_ENABLE_KEM_CLASSIC_MCELIECE
 #include <oqs/kem_classic_mceliece.h>
 #endif /* OQS_ENABLE_KEM_CLASSIC_MCELIECE */
+#ifdef OQS_ENABLE_KEM_RLCE
+#include <oqs/rlce.h>
+#endif /* OQS_ENABLE_KEM_RLCE */
 #ifdef OQS_ENABLE_KEM_HQC
 #include <oqs/kem_hqc.h>
 #endif /* OQS_ENABLE_KEM_HQC */
