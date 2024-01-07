@@ -173,6 +173,10 @@ if(OQS_DIST_X86_64_BUILD OR (OQS_USE_AVX2_INSTRUCTIONS AND OQS_USE_POPCNT_INSTRU
 endif()
 endif()
 
+option(OQS_ENABLE_KEM_RLCE "Enable RLCE algorithm family" ON)
+cmake_dependent_option(OQS_ENABLE_KEM_rlce_l1 "" ON "OQS_ENABLE_KEM_RLCE" OFF)
+cmake_dependent_option(OQS_ENABLE_KEM_rlce_l3 "" ON "OQS_ENABLE_KEM_RLCE" OFF)
+cmake_dependent_option(OQS_ENABLE_KEM_rlce_l5 "" ON "OQS_ENABLE_KEM_RLCE" OFF)
 
 option(OQS_ENABLE_KEM_HQC "Enable hqc algorithm family" ON)
 cmake_dependent_option(OQS_ENABLE_KEM_hqc_128 "" ON "OQS_ENABLE_KEM_HQC" OFF)
